@@ -1,19 +1,20 @@
-package com.incra.ratpack;
+package com.incra.endpoints;
 
-import ratpack.handling.Context;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
 
 /**
  * @author Jeff Risberg
  * @since 11/30/17
  */
-@GET
+@Path("/update")
 public class UpdateEndpoint {
 
-    public UpdateHandler() {
+    public UpdateEndpoint() {
     }
 
-    @Override
-    public void handle(Context context) {
-        context.render("Update handler");
+    @GET
+    public void handle() {
+        System.out.println("Update handler");
     }
 }

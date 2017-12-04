@@ -2,19 +2,18 @@ package com.incra.ratpack;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import ratpack.guice.Guice;
-import ratpack.server.BaseDir;
-import ratpack.server.RatpackServer;
 
 /**
  * @author Jeff Risberg
- * @since 07/30/17
+ * @since 11/30/17
  */
 public class Docker02 {
-    private static final Logger LOGGER = LoggerFactory.getLogger(Docker01.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(Docker02.class);
 
     public static void main(String[] args) throws Exception {
+        LOGGER.error("main starting");
 
+        /*
         RatpackServer.start(s -> s
                 .serverConfig(config -> config.baseDir(BaseDir.find()))
 
@@ -24,7 +23,7 @@ public class Docker02 {
 
                 // This is a Guice-based registration
                 .registry(Guice.registry(r ->
-                        r.bindInstance(UserService.class, new DefaultUserService())
+                        r.bindInstance(com.incra.ratpack.UserService.class, new com.incra.ratpack.DefaultUserService())
                 ))
 
                 .handlers(chain -> chain
@@ -36,5 +35,6 @@ public class Docker02 {
                         .all(ctx -> ctx.render("root handler!"))
                 )
         );
+        */
     }
 }

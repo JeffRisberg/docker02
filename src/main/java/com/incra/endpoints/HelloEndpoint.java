@@ -1,19 +1,20 @@
-package com.incra.ratpack;
+package com.incra.endpoints;
 
-import ratpack.handling.Context;
-import ratpack.handling.Handler;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
 
 /**
  * @author Jeff Risberg
  * @since 11/30/17
  */
+@Path("/hello")
 public class HelloEndpoint {
 
     public HelloEndpoint() {
     }
 
-    @Override
-    public void handle(Context context) {
-        context.render("Hello, World!");
+    @GET
+    public void handle() {
+        System.out.println("handle");
     }
 }

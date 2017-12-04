@@ -10,7 +10,7 @@ apply plugin: 'java'
 version = '1.0'
 
 dependencies {
-    compile "org.slf4j:slf4f-api:1.7.24"
+    compile "org.slf4j:slf4j-api:1.7.24"
     compile "org.projectlombok:lombok:1.16.18"
     compile group: 'commons-collections', name: 'commons-collections', version: '3.2.2'
 
