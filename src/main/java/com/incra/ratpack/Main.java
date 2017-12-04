@@ -7,8 +7,8 @@ import org.slf4j.LoggerFactory;
  * @author Jeff Risberg
  * @since 11/30/17
  */
-public class Docker02 {
-    private static final Logger LOGGER = LoggerFactory.getLogger(Docker02.class);
+public class Main {
+    private static final Logger LOGGER = LoggerFactory.getLogger(Main.class);
 
     public static void main(String[] args) throws Exception {
         LOGGER.error("main starting");
