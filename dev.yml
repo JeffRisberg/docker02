@@ -1,0 +1,9 @@
+version: '3'
+services:
+  docker01:
+    ports:
+      - '8080:5050'
+    environment:
+      - APPLICATION=$application_name
+      - VERSION=$APP_VERSION
+
