@@ -1,6 +1,7 @@
 package com.incra.endpoints;
 
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 
 /**
@@ -15,6 +16,11 @@ public class UpdateEndpoint {
 
     @GET
     public void handle() {
+        System.out.println("Update handler");
+    }
+
+    @POST
+    public void handlePost() {
         System.out.println("Update handler");
     }
 }
