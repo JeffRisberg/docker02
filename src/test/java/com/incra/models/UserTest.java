@@ -9,7 +9,7 @@ public class UserTest extends TestCase {
         User user = new User();
 
         user.setFirstName("Jack");
-        user.setLastName("Jones");
+        user.setLastName("Smith");
 
         assertTrue(user != null);
     }
