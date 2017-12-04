@@ -1,22 +1,22 @@
-apply plugin: 'java'
-
-sourceCompatibility = 1.7
-version = '1.0'
-
+/**
+ *
+ */
 repositories {
     mavenCentral()
 }
 
+apply plugin: 'java'
+
+version = '1.0'
+
 dependencies {
+    compile "org.slf4j:slf4f-api:1.7.24"
+    compile "org.projectlombok:lombok:1.16.18"
     compile group: 'commons-collections', name: 'commons-collections', version: '3.2.2'
 
-    lombok
+    compile group: 'com.sun.jersey', name: 'jersey-core', version: '1.19.4'
 
-    jersey
-
-    mysqlconnector
-
-    jpa?
+    compile group: 'org.hibernate.javax.persistence', name: 'hibernate-jpa-2.1-api', version: '1.0.0.Final'
 
     testCompile group: 'junit', name: 'junit', version: '4.+'
 }

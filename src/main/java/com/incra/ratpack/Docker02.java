@@ -10,7 +10,7 @@ import ratpack.server.RatpackServer;
  * @author Jeff Risberg
  * @since 07/30/17
  */
-public class Docker01 {
+public class Docker02 {
     private static final Logger LOGGER = LoggerFactory.getLogger(Docker01.class);
 
     public static void main(String[] args) throws Exception {
