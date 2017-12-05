@@ -5,8 +5,10 @@
       <profile default="true" name="Default" enabled="true" />
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="Docker02_main" target="1.8" />
       <module name="docker02_main" target="1.8" />
       <module name="docker02_test" target="1.8" />
+      <module name="Docker02_test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
