@@ -7,7 +7,10 @@ import com.incra.common.base.config.AppConfig;
 import com.incra.common.base.config.DatabaseConfig;
 import com.incra.common.base.services.config.EnvironmentBasedAppConfig;
 import com.incra.common.base.services.config.EnvironmentBasedMySQLConfiguration;
+import com.incra.services.DefaultIncidentService;
 import com.incra.services.DefaultUserService;
+import com.incra.services.IncidentService;
+import com.incra.services.UserService;
 
 /**
  * @author Jeff Risberg
@@ -22,6 +25,7 @@ public class MainModule extends ServletModule {
         bind(DatabaseConfig.class).annotatedWith(MySQL.class).to(EnvironmentBasedMySQLConfiguration.class).in(Scopes.SINGLETON);
         bind(AppConfig.class).to(EnvironmentBasedAppConfig.class).in(Scopes.SINGLETON);
 
-        bind(DefaultUserService.class);
+        bind(UserService.class).to(DefaultUserService.class);
+        bind(IncidentService.class).to(DefaultIncidentService.class);
     }
 }
