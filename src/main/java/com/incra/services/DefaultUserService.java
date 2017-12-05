@@ -5,7 +5,7 @@ import java.util.List;
 
 /**
  * @author Jeff Risberg
- * @since 12/20/16
+ * @since 11/20/17
  */
 public class DefaultUserService implements UserService {
     public List<String> getUsers() {
