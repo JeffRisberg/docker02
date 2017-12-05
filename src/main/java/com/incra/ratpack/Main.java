@@ -13,28 +13,14 @@ public class Main {
     public static void main(String[] args) throws Exception {
         LOGGER.error("main starting");
 
-        /*
-        RatpackServer.start(s -> s
-                .serverConfig(config -> config.baseDir(BaseDir.find()))
+        Server server = new Server(8080);
 
-                // This is a simple Ratpack-based registration
-                .registryOf(registry -> registry.add(new HelloHandler()))
-                .registryOf(registry -> registry.add(new UpdateHandler()))
+        ServletContextHandler sch = new ServletContextHandler(server, "/");
+        ServletHolder jerseyServletHolder = new ServletHolder(new ServletContainer());
+        jerseyServletHolder.setInitParameter(ServletProperties.JAXRS_APPLICATION_CLASS, MainApplication.class.getCanonicalName());
+        sch.addServlet(jerseyServletHolder, "/*");
 
-                // This is a Guice-based registration
-                .registry(Guice.registry(r ->
-                        r.bindInstance(com.incra.ratpack.UserService.class, new com.incra.ratpack.DefaultUserService())
-                ))
-
-                .handlers(chain -> chain
-                        .path("foo", ctx -> ctx.render("from the foo handler")) // Map to /foo
-                        .path("bar", ctx -> ctx.render("from the bar handler")) // Map to /bar
-                        .path("hello", ctx -> ctx.get(HelloHandler.class).handle(ctx))
-                        .path("update", ctx -> ctx.get(UpdateHandler.class).handle(ctx))
-                        .path("users", ctx -> ctx.render(ctx.get(UserService.class).getUsers().toString()))
-                        .all(ctx -> ctx.render("root handler!"))
-                )
-        );
-        */
+        server.start();
+        server.join();
     }
 }

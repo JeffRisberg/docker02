@@ -8,6 +8,7 @@ public class UserTest extends TestCase {
     public void test1() {
         User user = new User();
 
+        user.setId(1L);
         user.setFirstName("Jack");
         user.setLastName("Smith");
 
