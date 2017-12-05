@@ -1,5 +1,7 @@
 package com.incra.services;
 
+import com.incra.models.User;
+
 import java.util.List;
 
 /**
@@ -8,5 +10,5 @@ import java.util.List;
  */
 public interface UserService {
 
-    public List<String> getUsers();
+    public List<User> getUsers();
 }

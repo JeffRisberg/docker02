@@ -1,5 +1,8 @@
 package com.incra.services;
 
+import com.incra.models.User;
+
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -8,9 +11,14 @@ import java.util.List;
  * @since 11/20/17
  */
 public class DefaultUserService implements UserService {
-    public List<String> getUsers() {
-        String[] users = {"John", "Paul", "George", "Ringo"};
+    public List<User> getUsers() {
+        String[] userNames = {"John", "Paul", "George", "Ringo"};
 
-        return Arrays.asList(users);
+        List<User> results = new ArrayList<User>();
+
+        for (String userName : userNames) {
+            results.add(new User(4L, userName, "Smith"));
+        }
+        return results;
     }
 }
