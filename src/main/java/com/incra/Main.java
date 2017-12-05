@@ -1,4 +1,4 @@
-package com.incra.ratpack;
+package com.incra;
 
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.ServletContextHandler;

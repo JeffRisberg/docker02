@@ -1,4 +1,4 @@
-package com.incra.ratpack;
+package com.incra;
 
 import com.google.inject.Guice;
 import org.glassfish.hk2.api.ServiceLocator;
@@ -9,6 +9,10 @@ import org.jvnet.hk2.guice.bridge.api.GuiceIntoHK2Bridge;
 
 import javax.inject.Inject;
 
+/**
+ * @author Jeff Risberg
+ * @since 11/30/17
+ */
 public class MainApplication extends ResourceConfig {
     @Inject
     public MainApplication(ServiceLocator serviceLocator) {

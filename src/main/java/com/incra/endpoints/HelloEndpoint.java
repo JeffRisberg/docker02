@@ -2,6 +2,7 @@ package com.incra.endpoints;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.core.Response;
 
 /**
  * @author Jeff Risberg
@@ -14,7 +15,8 @@ public class HelloEndpoint {
     }
 
     @GET
-    public void handle() {
-        System.out.println("handle");
+    public Response handle() {
+        Object results = "Hello There";
+        return Response.status(Response.Status.OK).entity(results).build();
     }
 }

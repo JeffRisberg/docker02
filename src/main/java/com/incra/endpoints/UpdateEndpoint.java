@@ -3,6 +3,7 @@ package com.incra.endpoints;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
+import javax.ws.rs.core.Response;
 
 /**
  * @author Jeff Risberg
@@ -15,12 +16,16 @@ public class UpdateEndpoint {
     }
 
     @GET
-    public void handle() {
-        System.out.println("Update handler");
+    public Response handle() {
+        Object results = "GET UPDATE";
+
+        return Response.status(Response.Status.OK).entity(results).build();
     }
 
     @POST
-    public void handlePost() {
-        System.out.println("Update handler");
+    public Response handlePost() {
+        Object results = "POST UPDATE";
+
+        return Response.status(Response.Status.OK).entity(results).build();
     }
 }
