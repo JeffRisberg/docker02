@@ -28,6 +28,8 @@ def jarName = "docker02-all"
 
 ext {
     slf4jVersion = '1.7.24'
+    guiceVersion = '4.1.0'
+    jerseyVersion = '2.9.1'
 }
 
 assemble.dependsOn shadowJar
@@ -77,23 +79,25 @@ dependencies {
     compile 'commons-collections:commons-collections:3.2.2'
     compile 'commons-configuration:commons-configuration:1.6'
 
-    compile group: 'com.google.inject', name: 'guice', version: '4.1.0'
-    compile group: 'com.google.inject.extensions', name: 'guice-servlet', version: '4.1.0'
+    compile group: 'com.google.inject', name: 'guice', version: guiceVersion
+    compile group: 'com.google.inject.extensions', name: 'guice-servlet', version: guiceVersion
 
     compile group: 'org.eclipse.jetty', name: 'jetty-server', version: '9.2.0.v20140526'
     compile group: 'org.eclipse.jetty', name: 'jetty-servlet', version: '9.2.0.v20140526'
 
-    compile group: 'org.glassfish.jersey.core', name: 'jersey-common', version: '2.9.1'
-    compile group: 'org.glassfish.jersey.core', name: 'jersey-server', version: '2.9.1'
+    compile group: 'org.glassfish.jersey.core', name: 'jersey-common', version: jerseyVersion
+    compile group: 'org.glassfish.jersey.core', name: 'jersey-server', version: jerseyVersion
 
-    compile group: 'org.glassfish.jersey.containers', name: 'jersey-container-servlet', version: '2.9.1'
-    compile group: 'org.glassfish.jersey.media', name: 'jersey-media-json-jackson', version: '2.9.1'
+    compile group: 'org.glassfish.jersey.containers', name: 'jersey-container-servlet', version: jerseyVersion
+    compile group: 'org.glassfish.jersey.media', name: 'jersey-media-json-jackson', version: jerseyVersion
     compile group: 'org.glassfish.hk2', name: 'hk2', version: '2.3.0-b05'
     compile group: 'org.glassfish.hk2', name: 'guice-bridge', version: '2.2.0'
 
-    compile group: 'org.hibernate.javax.persistence', name: 'hibernate-jpa-2.1-api', version: '1.0.0.Final'
+    compile 'org.hibernate:hibernate-core:4.3.11.Final'
+    compile 'org.hibernate:hibernate-entitymanager:4.3.11.Final'
+    compile 'org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final'
 
-    testCompile group: 'junit', name: 'junit', version: '4.+'
+    testCompile "junit:junit:4.+"
 }
 
 
@@ -105,7 +109,8 @@ shadowJar {
     manifest {
         attributes ('Implementation-Title': project.name,
                 'Manifest-Version': '1.0',
-                'Build-Jdk': '1.8.0_102')
+                'Implementation-Version': project.version,
+                'Main-Class': 'com.incra.Main')
     }
     from { [project.configurations.compile] } {
         exclude "META-INF/*.SF"
