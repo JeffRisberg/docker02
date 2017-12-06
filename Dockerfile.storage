@@ -1,0 +1,12 @@
+FROM mysql
+
+ARG APP_VERSION
+ARG APP
+ARG JAR
+
+ENV version ${APP_VERSION}
+ENV application ${APP}
+
+EXPOSE 8080
+
+CMD ["mysqld"]

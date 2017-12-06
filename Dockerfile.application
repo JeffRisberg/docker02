@@ -7,10 +7,10 @@ ARG JAR
 ENV version ${APP_VERSION}
 ENV application ${APP}
 
-COPY target/docker02-jar-with-dependencies.jar /home/docker02-jar-with-dependencies.jar
+COPY build/libs/docker02-all-1.0.jar /home/docker02-all-1.0.jar
 
 # port for microservice
-EXPOSE 5050
+EXPOSE 8080
 
 # remote debugging port for IntelliJ
 EXPOSE 50505
@@ -18,4 +18,4 @@ EXPOSE 50505
 CMD ["java", \
      "-agentlib:jdwp=transport=dt_socket,address=50505,suspend=n,server=y", \
      "-jar", \
-     "/home/docker02-jar-with-dependencies.jar"]
+     "/home/docker02-all-1.0.jar"]
