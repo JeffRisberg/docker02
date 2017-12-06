@@ -3,7 +3,6 @@ package com.incra.services;
 import com.incra.models.Incident;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -11,9 +10,23 @@ import java.util.List;
  * @since 11/20/17
  */
 public class DefaultIncidentService implements IncidentService {
-    public List<Incident> getAll() {
 
+    public List<Incident> getAll() {
         List<Incident> results = new ArrayList<Incident>();
+        Incident incident;
+
+        incident = new Incident(2L, "Account update required",
+            "Click on Update list, follow instructions", "Medium");
+        results.add(incident);
+
+        incident = new Incident(3L, "No response within timeout interval",
+            "Check the network wiring, check for firewall configuration", "Medium");
+        results.add(incident);
+
+        incident = new Incident(4L, "Unable to install new app",
+            "Check your password on the Apple App Store", "Medium");
+        results.add(incident);
+
         return results;
     }
 }

@@ -1,9 +1,10 @@
 package com.incra.models;
 
-import junit.framework.TestCase;
 import org.junit.Test;
 
-public class UserTest extends TestCase {
+import static org.junit.Assert.assertTrue;
+
+public class UserTest {
     @Test
     public void test1() {
         User user = new User();

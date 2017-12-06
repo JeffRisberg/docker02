@@ -8,7 +8,7 @@ import javax.ws.rs.core.Response;
  * @author Jeff Risberg
  * @since 11/30/17
  */
-@Path("/hello")
+@Path("hello")
 public class HelloEndpoint {
 
     public HelloEndpoint() {
