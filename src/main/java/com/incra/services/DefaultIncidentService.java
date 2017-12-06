@@ -23,7 +23,7 @@ public class DefaultIncidentService implements IncidentService {
             "Check the network wiring, check for firewall configuration", "Medium");
         results.add(incident);
 
-        incident = new Incident(4L, "Unable to install new app",
+        incident = new Incident(4L, "Unable to install new application",
             "Check your password for the Apple App Store", "Medium");
         results.add(incident);
 
