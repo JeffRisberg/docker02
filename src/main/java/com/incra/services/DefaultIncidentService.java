@@ -16,7 +16,7 @@ public class DefaultIncidentService implements IncidentService {
         Incident incident;
 
         incident = new Incident(2L, "Account update required",
-            "Click on Update list, follow instructions", "Medium");
+            "Click on Update link, follow instructions", "Medium");
         results.add(incident);
 
         incident = new Incident(3L, "No response within timeout interval",
@@ -24,7 +24,7 @@ public class DefaultIncidentService implements IncidentService {
         results.add(incident);
 
         incident = new Incident(4L, "Unable to install new app",
-            "Check your password on the Apple App Store", "Medium");
+            "Check your password for the Apple App Store", "Medium");
         results.add(incident);
 
         return results;
