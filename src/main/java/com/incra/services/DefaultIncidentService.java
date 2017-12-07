@@ -7,7 +7,6 @@ import org.slf4j.LoggerFactory;
 import javax.naming.NamingException;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -51,23 +50,6 @@ public class DefaultIncidentService extends AbstractService implements IncidentS
       em.getTransaction().commit();
       em.close();
 
-          /*
-        List<Incident> result = new ArrayList<Incident>();
-        Incident incident;
-
-        incident = new Incident(2L, "Account update required",
-            "Click on Update link, follow instructions", "Medium");
-        result.add(incident);
-
-        incident = new Incident(3L, "No response within timeout interval",
-            "Check the network wiring, check for firewall configuration", "Medium");
-        result.add(incident);
-
-        incident = new Incident(4L, "Unable to install new application",
-            "Check your password for the Apple App Store", "Medium");
-        result.add(incident);
-        */
-
       return result;
     } catch (NamingException e) {
       return null;
@@ -81,7 +63,9 @@ public class DefaultIncidentService extends AbstractService implements IncidentS
 
     em.getTransaction().begin();
 
-    List<Incident> result = em.createQuery("SELECT is FROM Incident is").getResultList();
+    TypedQuery<Incident> query =
+        em.createQuery("SELECT i FROM Incident i", Incident.class);
+    List<Incident> result = query.getResultList();
 
     em.getTransaction().commit();
     em.close();
