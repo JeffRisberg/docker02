@@ -13,10 +13,10 @@ import org.slf4j.LoggerFactory;
  * @since 11/30/17
  */
 public class Main {
-    private static final Logger LOGGER = LoggerFactory.getLogger(Main.class);
+    private static final Logger logger = LoggerFactory.getLogger(Main.class);
 
     public static void main(String[] args) throws Exception {
-        LOGGER.error("main starting");
+        logger.error("main starting");
 
         Server server = new Server(8080);
 

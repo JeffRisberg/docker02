@@ -10,5 +10,7 @@ import java.util.List;
  */
 public interface IncidentService {
 
-    public List<Incident> getAll();
+    public Incident getOne(Long id);
+
+    public List<Incident> getList(int limit, int offset);
 }

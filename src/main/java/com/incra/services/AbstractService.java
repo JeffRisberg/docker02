@@ -12,7 +12,7 @@ import javax.persistence.Persistence;
 public class AbstractService {
 
   protected EntityManager getEntityManager() throws NamingException {
-    EntityManagerFactory emf = Persistence.createEntityManagerFactory("Bookkeeper");
+    EntityManagerFactory emf = Persistence.createEntityManagerFactory("docker02");
     return emf.createEntityManager();
   }
 }
