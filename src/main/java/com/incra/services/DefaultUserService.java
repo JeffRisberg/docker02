@@ -48,14 +48,6 @@ public class DefaultUserService extends AbstractService implements UserService {
       em.getTransaction().commit();
       em.close();
 
-            /*
-            String[] userNames = {"John", "Paul", "George", "Ringo"};
-
-            for (String userName : userNames) {
-                results.add(new User(4L, userName, "Smith"));
-            }
-            */
-
       return result;
     } catch (NamingException e) {
       return null;

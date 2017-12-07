@@ -16,6 +16,11 @@ VALUES('Account update required',
 INSERT INTO incident(title, description, severity)
 VALUES('No response within timeout interval',
        'Check the network wiring, check for firewall configuration',
+       'High');
+
+INSERT INTO incident(title, description, severity)
+VALUES('Unable to install new application',
+       'Check your password for the Apple App Store',
        'Medium');
 
 DROP TABLE users;
@@ -29,6 +34,9 @@ CREATE TABLE users (
 
 INSERT INTO users(first_name, last_name)
 VALUES('Jack', 'Jones');
+
+INSERT INTO users(first_name, last_name)
+VALUES('Luke', 'Skywalker');
 
 INSERT INTO users(first_name, last_name)
 VALUES('Han', 'Solo');
