@@ -10,3 +10,13 @@ services:
       - VERSION=${APP_VERSION}
       - ENVIRONMENT=${environment}
 
+  mysql:
+    image: 'incra/storage'
+    ports:
+      - '3306:3306'
+    environment:
+      - APPLICATION=${application_name}
+      - VERSION=${APP_VERSION}
+      - ENVIRONMENT=${environment}
+
+
