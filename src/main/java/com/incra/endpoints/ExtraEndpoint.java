@@ -8,19 +8,19 @@ import javax.ws.rs.core.Response;
 
 /**
  * @author Jeff Risberg
- * @since 11/30/17
+ * @since 12/10/17
  */
 @Singleton
-@Path("hello")
-public class HelloEndpoint {
+@Path("extra")
+public class ExtraEndpoint {
 
     @Inject
-    public HelloEndpoint() {
+    public ExtraEndpoint() {
     }
 
     @GET
     public Response handle() {
-        Object results = "Hello There";
+        Object results = "Extra endpoint";
         return Response.status(Response.Status.OK).entity(results).build();
     }
 }
