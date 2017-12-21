@@ -30,6 +30,7 @@ ext {
     slf4jVersion = '1.7.24'
     guiceVersion = '4.1.0'
     jerseyVersion = '2.9.1'
+    hibernateVersion = '4.3.11.Final'
 }
 
 assemble.dependsOn shadowJar
@@ -93,8 +94,8 @@ dependencies {
     compile group: 'org.glassfish.hk2', name: 'hk2', version: '2.3.0-b05'
     compile group: 'org.glassfish.hk2', name: 'guice-bridge', version: '2.2.0'
 
-    compile 'org.hibernate:hibernate-core:4.3.11.Final'
-    compile 'org.hibernate:hibernate-entitymanager:4.3.11.Final'
+    compile "org.hibernate:hibernate-core:$hibernateVersion"
+    compile "org.hibernate:hibernate-entitymanager:$hibernateVersion"
     compile 'org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final'
     compile 'com.zaxxer:HikariCP:2.7.4'
     compile 'mysql:mysql-connector-java:5.1.45'
