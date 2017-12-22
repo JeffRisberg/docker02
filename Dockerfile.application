@@ -1,12 +1,5 @@
 FROM openjdk:8u131-jdk
 
-ARG APP_VERSION
-ARG APP
-ARG JAR
-
-ENV version ${APP_VERSION}
-ENV application ${APP}
-
 COPY build/libs/docker02-all-1.0.jar /home/docker02-all-1.0.jar
 
 # port for microservice

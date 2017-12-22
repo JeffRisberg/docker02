@@ -38,12 +38,12 @@ assemble.dependsOn shadowJar
 
 task buildApplicationDockerImage(type: Exec) {
     executable "docker"
-    args "build", "-t", "incra/application", "-f", "Dockerfile.application", "."
+    args "build", "-t", "company/application", "-f", "Dockerfile.application", "."
 }
 
 task buildStorageDockerImage(type: Exec) {
     executable "docker"
-    args "build", "-t", "incra/storage", "-f", "Dockerfile.storage", "."
+    args "build", "-t", "company/storage", "-f", "Dockerfile.storage", "."
 }
 
 task buildDockerImages(type: Exec) {
@@ -56,13 +56,13 @@ buildDockerImages.dependsOn(buildStorageDockerImage)
 task cleanApplicationDockerImage(type: Exec) {
     ignoreExitValue true
     executable "docker"
-    args "rmi", "incra/application", "--force"
+    args "rmi", "company/application", "--force"
 }
 
 task cleanStorageDockerImage(type: Exec) {
     ignoreExitValue true
     executable "docker"
-    args "rmi", "incra/storage", "--force"
+    args "rmi", "company/storage", "--force"
 }
 
 task cleanDockerImages(type: Exec) {
@@ -113,7 +113,7 @@ shadowJar {
         attributes ('Implementation-Title': project.name,
                 'Manifest-Version': '1.0',
                 'Implementation-Version': project.version,
-                'Main-Class': 'com.incra.Main')
+                'Main-Class': 'com.company.Main')
     }
     from { [project.configurations.compile] } {
         exclude "META-INF/*.SF"

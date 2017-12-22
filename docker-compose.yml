@@ -1,7 +1,7 @@
 version: '3'
 services:
   docker02:
-    image: 'incra/application'
+    image: 'company/application'
     ports:
       - '8080:8080'
       - '50505:50505'
@@ -11,7 +11,7 @@ services:
       - ENVIRONMENT=${environment}
 
   mysql:
-    image: 'incra/storage'
+    image: 'company/storage'
     ports:
       - '3306:3306'
     environment:
