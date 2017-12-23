@@ -53,7 +53,7 @@ public class MessagesEndpoint {
 
     @POST
     @Path("{sender}/{text}")
-    public Response handlePost(String sender, String text) {
+    public Response handlePost(@PathParam("sender") String sender, @PathParam("text") String text) {
         Message message = messageService.create(sender, text);
 
         return Response.status(Response.Status.OK).entity(message).build();

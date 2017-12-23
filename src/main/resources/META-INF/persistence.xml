@@ -7,6 +7,7 @@
         <provider>org.hibernate.ejb.HibernatePersistence</provider>
 
         <class>com.company.models.Incident</class>
+        <class>com.company.models.Message</class>
         <class>com.company.models.User</class>
 
         <properties>
