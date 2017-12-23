@@ -13,4 +13,7 @@ public interface MessageService {
     public Message getOne(Long id);
 
     public List<Message> getList(int limit, int offset);
+
+    public Message create(String sender, String text);
+
 }

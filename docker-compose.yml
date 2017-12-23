@@ -14,9 +14,7 @@ services:
     image: 'company/storage'
     ports:
       - '3306:3306'
+    volumes:
+      - '/data/mysql:/var/lib/mysql'
     environment:
-      - APPLICATION=${application_name}
-      - VERSION=${APP_VERSION}
-      - ENVIRONMENT=${environment}
-
-
+      - MYSQL_ROOT_PASSWORD=123456
