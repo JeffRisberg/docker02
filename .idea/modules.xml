@@ -3,10 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Docker02.iml" filepath="$PROJECT_DIR$/.idea/modules/Docker02.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Docker02.iml" filepath="$PROJECT_DIR$/.idea/modules/Docker02.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Docker02_main.iml" filepath="$PROJECT_DIR$/.idea/modules/Docker02_main.iml" group="Docker02" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Docker02_main.iml" filepath="$PROJECT_DIR$/.idea/modules/Docker02_main.iml" group="Docker02" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Docker02_test.iml" filepath="$PROJECT_DIR$/.idea/modules/Docker02_test.iml" group="Docker02" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Docker02_test.iml" filepath="$PROJECT_DIR$/.idea/modules/Docker02_test.iml" group="Docker02" />
     </modules>
   </component>
