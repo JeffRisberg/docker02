@@ -1,5 +1,3 @@
 FROM mysql
 
-EXPOSE 3306
-
-CMD ["mysqld"]
+COPY docker/data/data-dump.sql /docker-entrypoint-initdb.d/data-dump.sql

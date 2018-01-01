@@ -1,4 +1,6 @@
-DROP TABLE incident;
+USE docker02
+
+DROP TABLE IF EXISTS incident;
 
 CREATE TABLE incident (
   id MEDIUMINT NOT NULL AUTO_INCREMENT,
@@ -23,7 +25,7 @@ VALUES('Unable to install new application',
        'Check your password for the Apple App Store',
        'Medium');
 
-DROP TABLE users;
+DROP TABLE IF EXISTS users;
 
 CREATE TABLE users (
   id MEDIUMINT NOT NULL AUTO_INCREMENT,
