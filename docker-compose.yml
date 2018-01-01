@@ -20,4 +20,7 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=123456
       - MYSQL_DATABASE=docker02
+      - MYSQL_USER=developer
+      - MYSQL_USER_HOST=%
+      - MYSQL_PASSWORD=123456
 
