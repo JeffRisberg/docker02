@@ -3,6 +3,7 @@
 .idea/tasks.xml
 
 .DS_Store
+.gradle
 target/
 build/
 out/
