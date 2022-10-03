@@ -14,7 +14,7 @@ gradle clean assemble
 
 ### To create docker images
 
-gradle clearDockerImages buildDockerImages
+gradle cleanDockerImages buildDockerImages
 
 ### To deploy
 
