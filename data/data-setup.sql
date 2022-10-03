@@ -62,4 +62,7 @@ INSERT INTO messages(sender, text)
 VALUES ('Jill', 'let\'s fetch some water');
 
 INSERT INTO messages(sender, text)
-VALUES ('Jack', 'ok');
+VALUES ('Jack', 'ok, I will get a pail');
+
+INSERT INTO messages(sender, text)
+VALUES ('Jill', 'not that one, it has a hole');
