@@ -28,3 +28,4 @@ services:
       - MYSQL_USER=developer
       - MYSQL_USER_HOST=%
       - MYSQL_PASSWORD=123456
+      - default_authentication_plugin=mysql_native_password

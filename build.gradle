@@ -28,10 +28,14 @@ def jarName = "docker02-all"
 
 ext {
     slf4jVersion = '1.7.35'
+    projectLombokVersion = '1.16.20'
     guiceVersion = '4.2.3'
     jettyVersion = '9.4.41.v20210516'
     jerseyVersion = '2.33'
+    jacksonVersion = '2.12.4'
+    hk2Version = '2.6.0'
     hibernateVersion = '4.3.11.Final'
+    junitVersion = '4.13.2'
 }
 
 assemble.dependsOn shadowJar
@@ -77,31 +81,39 @@ cleanDockerImages.finalizedBy(cleanStorageDockerImage)
 dependencies {
     compile "org.slf4j:slf4j-api:$slf4jVersion"
     runtime "org.slf4j:slf4j-simple:$slf4jVersion"
-    compile 'org.projectlombok:lombok:1.16.20'
+    compile "org.projectlombok:lombok:$projectLombokVersion"
+
     compile 'commons-collections:commons-collections:3.2.2'
     compile 'commons-configuration:commons-configuration:1.6'
 
-    compile group: 'com.google.inject', name: 'guice', version: guiceVersion
-    compile group: 'com.google.inject.extensions', name: 'guice-servlet', version: guiceVersion
+    compile "com.google.inject:guice:$guiceVersion"
+    compile "com.google.inject.extensions:guice-servlet:$guiceVersion"
 
-    compile group: 'org.eclipse.jetty', name: 'jetty-server', version: jettyVersion
-    compile group: 'org.eclipse.jetty', name: 'jetty-servlet', version: jettyVersion
+    compile "org.eclipse.jetty:jetty-server:$jettyVersion"
+    compile "org.eclipse.jetty:jetty-servlet:$jettyVersion"
 
-    compile group: 'org.glassfish.jersey.core', name: 'jersey-common', version: jerseyVersion
-    compile group: 'org.glassfish.jersey.core', name: 'jersey-server', version: jerseyVersion
+    compile "org.glassfish.jersey.core:jersey-common:$jerseyVersion"
+    compile "org.glassfish.jersey.core:jersey-server:$jerseyVersion"
 
-    compile group: 'org.glassfish.jersey.containers', name: 'jersey-container-servlet', version: jerseyVersion
-    compile group: 'org.glassfish.jersey.media', name: 'jersey-media-json-jackson', version: jerseyVersion
-    compile group: 'org.glassfish.hk2', name: 'hk2', version: '2.3.0-b05'
-    compile group: 'org.glassfish.hk2', name: 'guice-bridge', version: '2.2.0'
+    compile "org.glassfish.jersey.containers:jersey-container-servlet:$jerseyVersion"
+    compile "org.glassfish.jersey.inject:jersey-hk2:$jerseyVersion"
+    compile "org.glassfish.jersey.media:jersey-media-json-jackson:$jerseyVersion"
+
+    compile "com.squarespace.jersey2-guice:jersey2-guice-impl:1.0.6"
+    compile "org.glassfish.hk2:hk2:$hk2Version"
+    compile "org.glassfish.hk2:guice-bridge:$hk2Version"
+
+    compile "com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:$jacksonVersion"
+    compile "com.fasterxml.jackson.datatype:jackson-datatype-joda:$jacksonVersion"
 
     compile "org.hibernate:hibernate-core:$hibernateVersion"
     compile "org.hibernate:hibernate-entitymanager:$hibernateVersion"
     compile 'org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final'
-    compile 'com.zaxxer:HikariCP:2.7.4'
-    compile 'mysql:mysql-connector-java:5.1.45'
 
-    testCompile "junit:junit:4.+"
+    compile 'com.zaxxer:HikariCP:2.7.4'
+    compile 'mysql:mysql-connector-java:5.1.48'
+
+    testCompile "junit:junit:$junitVersion"
 }
 
 
