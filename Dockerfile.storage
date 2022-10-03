@@ -1,1 +1,3 @@
 FROM mysql/mysql-server:8.0.20
+
+COPY data/data-setup.sql /docker-entrypoint-initdb.d
